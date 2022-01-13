@@ -11,7 +11,7 @@ import Bike from ".././Bike/Bike";
 
 const RentList = () => {
     const bikes = useSelector((state) => state.bikes);
-    const rentPrice = bikes.map(bike=>bike.status === 'rented' ? bike.price : 0).reduce((a,b)=>a+b);
+    const rentPrice =  bikes.length ? bikes.map(bike=>bike.status === 'rented' ? bike.price : 0).reduce((a,b)=>a+b): null;
 
     return (
         <>
